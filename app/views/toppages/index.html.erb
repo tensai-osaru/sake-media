@@ -1,0 +1,17 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <%= link_to "新規投稿", new_micropost_path, class:"btn btn-primary" %>
+    </aside>
+    <div class="col-xs-8">
+      <%= render 'microposts/microposts', microposts: @microposts %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to the Microposts</h1>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>
